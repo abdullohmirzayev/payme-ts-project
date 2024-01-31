@@ -5,8 +5,10 @@ import { styles } from "../util/style";
 
 const Navbar = () => {
   const [toggleNav, setToggleNav] = useState(false);
+  const [active, setActive] = useState("home");
 
   const toggleHeandler = () => setToggleNav((prev) => !prev);
+  const activeHeandler = (id) => setActive(id);
 
   return (
     <div className={`w-full py-6 ${styles.flexBetween}`}>
@@ -22,9 +24,11 @@ const Navbar = () => {
         {navigationLinks.map((nav, idx) => (
           <li
             key={nav.id}
-            className={`font-montserrat font-normal cursor-pointer text-[16px] text-white ${
-              idx === navigationLinks.length - 1 ? "mr-0    " : "mr-10"
-            } hover:text-lightWhite transition-all duration-500`}
+            className={`${idx === navigationLinks.length - 1 ? "mr-0" : "mr-10"}
+            ${active === nav.id ? "text-white" : "text-lightWhite"}
+            font-montserrat font-normal cursor-pointer text-[16px]
+            hover:text-white transition-all duration-500`}
+            onClick={() => activeHeandler(nav.id)}
           >
             {nav.title}
           </li>
@@ -41,17 +45,17 @@ const Navbar = () => {
         />
 
         <div
-          className={`${
-            !toggleNav ? "hidden" : "flex"
-          } p-6 absolute top-[6rem] right-0 left-0 w-full sidebar bg-black-gradient`}
+          className={`${!toggleNav ? "hidden" : "flex"
+            } p-6 absolute top-[6rem] right-0 left-0 w-full sidebar bg-black-gradient`}
         >
           <ul className="list-none flex justify-center items-center flex-1">
             {navigationLinks.map((nav, idx) => (
               <li
                 key={nav.id}
-                className={`font-montserrat font-normal cursor-pointer text-[16px] text-white ${
-                  idx === navigationLinks.length - 1 ? "mr-0    " : "mr-10"
-                } hover:text-lightWhite transition-all duration-500`}
+                className={`${idx === navigationLinks.length - 1 ? "mr-0" : "mr-10"}
+              ${active === nav.id ? "text-white" : "text-lightWhite"}
+              font-montserrat font-normal cursor-pointer text-[16px] transition-all duration-500`}
+                onClick={() => activeHeandler(nav.id)}
               >
                 {nav.title}
               </li>
