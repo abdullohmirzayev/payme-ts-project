@@ -6,3 +6,20 @@
 * {
   scroll-behavior: smooth;
 }
+
+.sidebar {
+  animation: slide-sidebar 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-sidebar {
+  0% {
+    transform: translateY(100px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.bg-black-gradient {
+  background: linear-gradient(to top, #fff -278px, #6d6d6d -78%, #11101d 100%);
+}
