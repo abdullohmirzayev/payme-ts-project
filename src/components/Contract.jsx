@@ -16,6 +16,7 @@ const Contract = () => {
             </div>
             <div className={layout.sectionImage}>
             <img src={card} alt="card" className="w-[100%] h-[100%]" />
+            
             </div>
         </section>
     )
