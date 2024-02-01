@@ -1,6 +1,7 @@
 import { features } from "../util/constants"
 import { layout, styles } from "../util/style"
 import Button from "./button"
+import FeatureCard from "./feature-card"
 
 const Business = () => {
     return (
@@ -15,9 +16,9 @@ const Business = () => {
                 <Button styles={'mt-10'} />
             </div>
             <div className={`${layout.sectionImage} flex-col`}>
-                {/* {features.map((feature) => (
-
-                ))} */}
+                {features.map((feature, idx) => (
+                    <FeatureCard key={feature.id} {...feature} idx={idx} />
+                ))}
             </div>
         </section>
     )
