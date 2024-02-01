@@ -6,6 +6,7 @@ import {
   Home,
   Navbar,
   Statistics,
+  Testimonlats,
 } from "./components";
 import { styles } from "./util/style";
 
@@ -31,7 +32,7 @@ const App = () => {
           <Contract />
           <Billing />
           <Business />
-          {/* Testimonlats */}
+          <Testimonlats />
           <CTA />
           {/* Footer */}
         </div>
