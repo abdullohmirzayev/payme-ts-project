@@ -81,7 +81,6 @@ export const feedbacks = [
   },
 ];
 
-// airbnb binance coinbase dropbox
 export const clients = [
   {
     id: 1,
@@ -98,5 +97,44 @@ export const clients = [
   {
     id: 4,
     logo: dropbox,
+  },
+];
+
+export const footerLinks = [
+  {
+    title: "Jamiyat",
+    links: [
+      { name: "Yordam markazi", link: "https://www.hoobank.com/help-center/" },
+      { name: "Hamkorlar", link: "https://www.hoobank.com/partners/" },
+      { name: "Takliflar", link: "https://www.hoobank.com/suggestions/" },
+      { name: "Blog", link: "https://www.hoobank.com/blog/" },
+      { name: "Yangiliklar", link: "https://www.hoobank.com/newsletters/" },
+    ],
+  },
+
+  {
+    title: "Foydali Havolalar",
+    links: [
+      { name: "Content", link: "https://www.sammi.ac/content/" },
+      { name: "Qanday ishlaydi", link: "https://www.sammi.ac/how-it-works/" },
+      {
+        name: "Shartlar & xizmatlar",
+        link: "https://www.sammi.ac/terms-and-services/",
+      },
+    ],
+  },
+
+  {
+    title: "Hamkor",
+    links: [
+      {
+        name: "Bizning hamkorimiz",
+        link: "https://www.sammi.ac/our-partner/",
+      },
+      {
+        name: "Hamkor bo'ling",
+        link: "https://www.sammi.ac/become-a-partner/",
+      },
+    ],
   },
 ];

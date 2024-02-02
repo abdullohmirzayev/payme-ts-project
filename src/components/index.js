@@ -7,3 +7,4 @@ export { default as Business } from "./Business";
 export { default as CTA } from "./Cta";
 export { default as Testimonlats } from "./Testimonlats";
 export { default as Clients } from "./Clients";
+export { default as Footer } from "./Footer";
