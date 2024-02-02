@@ -5,9 +5,9 @@ module.exports = {
     extend: {
       colors: {
         primary: "#00040f",
-        secoundary: "#00f6f7",
+        secondary: "00f6ff",
         lightWhite: "rgba(255, 255, 255, 0.7)",
-        lightBlue: "rgba(9, 151, 124, 0.1)",
+        lightBlue: "rgba(7, 151, 124, 0.1)",
       },
       fontFamily: {
         montserrat: ["Montserrat", "sans-serif"],
@@ -15,7 +15,7 @@ module.exports = {
     },
     screens: {
       xs: "480px",
-      ss: "630px",
+      ss: "620px",
       sm: "768px",
       md: "1060px",
       lg: "1200px",

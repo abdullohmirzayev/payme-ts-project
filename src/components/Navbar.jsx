@@ -1,63 +1,68 @@
 import { useState } from "react";
-import { logo, menu, close } from "../assets";
-import { navigationLinks } from "../util/constants";
+import { logo } from "../assets";
+import { navigationLinks } from "../util/constant";
 import { styles } from "../util/style";
+import { AiOutlineMenuFold } from "react-icons/ai";
+import { AiOutlineClose } from "react-icons/ai";
 
 const Navbar = () => {
-  const [toggleNav, setToggleNav] = useState(false);
   const [active, setActive] = useState("home");
-
-  const toggleHeandler = () => setToggleNav((prev) => !prev);
-  const activeHeandler = (id) => setActive(id);
-
+  const [toggleNav, setToggleNav] = useState(false);
+  const toggleHandler = () => {
+    setToggleNav((prev) => !prev);
+  };
+  const activeHandler = (id) => setActive(id);
   return (
-    <div className={`w-full py-6 ${styles.flexBetween}`}>
-      {/* Logo */}
-      <img
-        src={logo}
-        alt="logo"
-        className="sm:w-[100px] w-[85px] sm:h-[60px] h-[50px] cursor-pointer"
-      />
-
-      {/* Nanigation link */}
-      <ul className="list-none sm:flex hidden justify-end items-center flex-1">
-        {navigationLinks.map((nav, idx) => (
-          <li
-            key={nav.id}
-            className={`${idx === navigationLinks.length - 1 ? "mr-0" : "mr-10"}
-            ${active === nav.id ? "text-white" : "text-lightWhite"}
-            font-montserrat font-normal cursor-pointer text-[16px]
-            hover:text-white transition-all duration-500`}
-            onClick={() => activeHeandler(nav.id)}
-          >
-            {nav.title}
+    <div className={`${styles.flexBetween} w-full  navbar`}>
+      <div className={`${styles.heading1} cursor-pointer`}>
+        <img src={logo} alt="logo" className="w-[130px] " />
+      </div>
+      <ul className="list-none sm:flex hidden justify-end items-center  ">
+        {navigationLinks.map((item, index) => (
+          <li key={item.id}>
+            <a
+              href={`#${item.id}`}
+              className={`${styles.navLink} ${
+                index === navigationLinks.length - 1 ? "mr-0" : "mr-10"
+              } ${active === item.id ? "active" : ""}
+               hover:text-white transition-all duration-300 navlink`}
+              onClick={() => activeHandler(item.id)}
+            >
+              {item.title}
+            </a>
           </li>
         ))}
       </ul>
 
-      {/* Navigation btn */}
-      <div className={"sm:hidden flex flex-1 justify-end items-end"}>
-        <img
-          src={toggleNav ? close : menu}
-          alt="munu"
-          className="w-[40px] h-[40px] object-contain"
-          onClick={toggleHeandler}
-        />
+      {/* navigation btn*/}
+      <div className="sm:hidden flex flex-1 justify-end items-end">
+        <div
+          className="text-white text-[25px] cursor-pointer"
+          onClick={toggleHandler}
+        >
+          {toggleNav ? <AiOutlineClose /> : <AiOutlineMenuFold />}
+        </div>
 
         <div
-          className={`${!toggleNav ? "hidden" : "flex"
-            } p-6 absolute top-[6rem] right-0 left-0 w-full sidebar bg-black-gradient`}
+          className={`${
+            !toggleNav ? "hidden" : "flex"
+          } p-6 absolute top-20 right-0
+          left-0 w-full sidebar bg-black-gradient`}
         >
-          <ul className="list-none flex justify-center items-center flex-1">
-            {navigationLinks.map((nav, idx) => (
-              <li
-                key={nav.id}
-                className={`${idx === navigationLinks.length - 1 ? "mr-0" : "mr-10"}
-              ${active === nav.id ? "text-white" : "text-lightWhite"}
-              font-montserrat font-normal cursor-pointer text-[16px] transition-all duration-500`}
-                onClick={() => activeHeandler(nav.id)}
-              >
-                {nav.title}
+          <ul className="list-none flex justify-center items-center flex-1 ">
+            {navigationLinks.map((item, index) => (
+              <li key={item.id}>
+                <a
+                  href={`#${item.id}`}
+                  className={`${styles.navLink} ${
+                    index === navigationLinks.length - 1 ? "mr-0" : "mr-10"
+                  }${
+                    active === item.id ? "text-white" : "text-lightWhite"
+                  } hover:text-lightWhite transition-all duration-300`}
+                  onClick={() => activeHandler(item.id)}
+                >
+                  {item.title}
+                </a>
               </li>
             ))}
           </ul>
