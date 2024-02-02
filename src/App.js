@@ -2,6 +2,7 @@ import {
   Billing,
   Business,
   CTA,
+  Clients,
   Contract,
   Home,
   Navbar,
@@ -33,6 +34,7 @@ const App = () => {
           <Billing />
           <Business />
           <Testimonlats />
+          <Clients />
           <CTA />
           {/* Footer */}
         </div>

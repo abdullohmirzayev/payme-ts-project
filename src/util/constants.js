@@ -1,4 +1,12 @@
-import { send, shield, start } from "../assets";
+import {
+  send,
+  shield,
+  start,
+  airbnb,
+  binance,
+  coinbase,
+  dropbox,
+} from "../assets";
 
 export const navigationLinks = [
   {
@@ -70,5 +78,25 @@ export const feedbacks = [
       "It is usually people in the money business, finance, and international trade that are really rich.",
     name: "Kenn Gallagher",
     title: "Founder & Ledaer",
+  },
+];
+
+// airbnb binance coinbase dropbox
+export const clients = [
+  {
+    id: 1,
+    logo: airbnb,
+  },
+  {
+    id: 2,
+    logo: binance,
+  },
+  {
+    id: 3,
+    logo: coinbase,
+  },
+  {
+    id: 4,
+    logo: dropbox,
   },
 ];
